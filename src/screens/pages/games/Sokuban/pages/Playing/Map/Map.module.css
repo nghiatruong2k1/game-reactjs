@@ -1,0 +1,12 @@
+.container {
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  .table {
+    table-layout: fixed !important;
+  }
+  .cell {
+    width: 4em;
+    height: 4em;
+  }
+  
