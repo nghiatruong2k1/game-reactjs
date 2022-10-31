@@ -30,10 +30,12 @@ export class ActionConfig extends String {
       enumerable: false,
       value: function (values) {
         let str = `${path}`;
-        while (this.parent) {
-          const parentPath = this.parent?.path;
+        let parent = this.parent;
+        do {
+          const parentPath = parent?.path;
           str = (parentPath ? parentPath + '/' : '') + str;
-        }
+          parent = parent?.parent;
+        } while (parent);
         if (typeof str === 'string') {
           const args = str.match(regex);
           if (args && Array.isArray(args)) {
